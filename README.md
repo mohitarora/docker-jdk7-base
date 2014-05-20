@@ -6,7 +6,7 @@ Install Docker and Packer on the machine and execute the following command.
 
 ```
 $ packer validate jdk7-base.json
-$ packer build -var 'version=v1.0.0' jdk7-base.json
+$ packer build -var 'version=v1.0.0' -var 'base-image-version=v1.0.0' jdk7-base.json
 ```
 
 Once packer creates a docker container, ansible is used to provision the container. Once container is provisioned an image is created and pushed to docker index.

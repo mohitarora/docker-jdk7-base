@@ -1,22 +1,15 @@
 {
     "variables": {
-        "version": ""
+        "version": "",
+        "base-image-version": ""
     },
     "builders":[{
         "type": "docker",
-        "image": "centos",
-        "pull": true,
-        "export_path": "centos-base-{{user `version`}}.tar"
+        "image": "centos-base:{{user `base-image-version`}}",
+        "pull": false,
+        "export_path": "jdk7-base-{{user `version`}}.tar"
     }],
     "provisioners":[
-        {
-            "type": "shell",
-            "inline": [
-                "rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm",
-                "yum -y update",
-                "yum -y install ansible python-setuptools"
-            ]
-        },
         {
             "type": "ansible-local",
             "playbook_file": "playbooks/local.yml",
