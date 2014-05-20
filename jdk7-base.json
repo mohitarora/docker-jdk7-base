@@ -6,7 +6,7 @@
     "builders":[{
         "type": "docker",
         "image": "centos-base:{{user `base-image-version`}}",
-        "pull": false,
+        "pull": true,
         "export_path": "jdk7-base-{{user `version`}}.tar"
     }],
     "provisioners":[
