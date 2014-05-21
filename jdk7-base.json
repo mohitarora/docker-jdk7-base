@@ -23,7 +23,6 @@
             "type": "docker-import",
             "repository": "mohitarora/jdk7-base",
             "tag": "{{user `version`}}"
-        },
-        "docker-push"
+        }
     ]
 }
