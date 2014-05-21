@@ -5,7 +5,7 @@
     },
     "builders":[{
         "type": "docker",
-        "image": "centos-base:{{user `base-image-version`}}",
+        "image": "mohitarora/centos-base:{{user `base-image-version`}}",
         "pull": true,
         "export_path": "jdk7-base-{{user `version`}}.tar"
     }],
